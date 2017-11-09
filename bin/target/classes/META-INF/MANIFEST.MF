@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: BookingDemo
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Vista
+Implementation-Vendor-Id: hottel
+Build-Jdk: 1.8.0_101
+Implementation-URL: http://projects.spring.io/spring-boot/BookingDemo/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

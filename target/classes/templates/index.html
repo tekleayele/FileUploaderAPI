@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Filter Uploader WS API</title>
+<link rel="stylesheet" href="/js/bootstrap.css" />
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
+
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/app/app.module.js"></script>
+<script type="text/javascript" src="/app/fileuploadapi.controller.js"></script>
+</head>
+<body data-ng-app="app"
+	data-ng-controller="FileUploaderWSController as vm">
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/"><i class="fa fa-upload"
+					aria-hidden="true"> File Upload API Portal v1.0</i></a>
+			</div>
+
+		</nav>
+	</header>
+
+	<form class="navbar-form" align="right" role="search"
+		data-ng-submit="vm.searchFile(vm.search)">
+		<div class="input-group">
+			<input type="text" data-ng-model="vm.search" class="form-control"
+				placeholder="Search File Meta Data..." /> <span
+				class="input-group-btn">
+				<button type="submit" data-ng-click="vm.searchFile(vm.search)"
+					class="btn btn-default">
+					<span class="glyphicon glyphicon-search"> <span
+						class="sr-only">Search...</span>
+					</span>
+				</button>
+			</span>
+		</div>
+	</form>
+
+
+	<div class="center_div">
+		<form action="/FileUploaderAPI/upload" method="post"
+			enctype="multipart/form-data">
+
+			<div class="row">
+				<div class="form-group row">
+					<label for="input-b1" class="col-xs-2 col-form-label">File
+						Path: </label>
+					<div class="col-xs-1">
+						<input type="file" name="file" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn btn-success">Upload</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div style="margin-left: 50px;">
+		<div class="row">
+			<div class="col-lg-offset-2 col-lg-8">
+				<div class="btn-group" role="group">
+					<button data-ng-click="vm.getAll()" type="button"
+						class="btn btn-default">All</button>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>File Name</th>
+							<th>Type</th>
+							<th>Size</th>
+							<th>Create TimeStamp</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="file in vm.fileMetaDataInfos">
+							<td>{{file.name}}</td>
+							<td>{{file.type}}</td>
+							<td>{{file.size}}</td>
+							<td>{{file.createdTimeStamp  | date:"MM/dd/yyyy 'at' h:mma"}}</td>
+							<td class="col-sm-offset-2 col-sm-2">
+								<button class="btn btn-danger"
+									data-ng-click="vm.deleteFile(file.id)">Delete</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div data-ng-if="vm.bookings.length == 0">
+					<div align="center">No results found...</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

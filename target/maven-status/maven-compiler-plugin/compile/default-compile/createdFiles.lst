@@ -1,0 +1,7 @@
+com\ospreytechnology\javaide\controller\AppConfig.class
+com\ospreytechnology\javaide\controller\JavaCompiler$MyCallable.class
+com\ospreytechnology\javaide\controller\JavaCompiler.class
+com\ospreytechnology\javaide\controller\JavaCompilerApplication.class
+com\ospreytechnology\javaide\controller\ViewController.class
+com\ospreytechnology\javaide\controller\JavaCompilerRestController.class
+com\ospreytechnology\javaide\controller\JavaCompilerVO.class

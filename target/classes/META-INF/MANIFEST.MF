@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: FileUploaderAPIWS
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Vista
+Implementation-Vendor-Id: FileUploaderAPI
+Build-Jdk: 1.8.0_101
+Implementation-URL: 
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
